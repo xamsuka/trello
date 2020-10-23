@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import "./Modal.css";
 import Portal from "../Portal/Portal";
 
@@ -34,7 +35,13 @@ class Modal extends Component {
       </React.Fragment>
     );
   }
-
 };
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
+  onCancel: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
+}
 
 export default Modal;

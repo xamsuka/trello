@@ -45,7 +45,6 @@ function App(props) {
 App.propTypes = {
   userData: PropTypes.shape({
     firstName: PropTypes.string,
-    lastName: PropTypes.string,
   }).isRequired,
   isModalRegOpen: PropTypes.bool.isRequired,
   onRegistration: PropTypes.func.isRequired,

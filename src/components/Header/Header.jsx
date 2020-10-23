@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./Header.css";
 import iconUser from "../../images/icon-user.svg";
 
@@ -28,5 +29,12 @@ const Header = (props) => {
     </header>
   );
 };
+
+Header.propTypes = {
+  userData: PropTypes.shape({
+    firstName: PropTypes.string,
+  }).isRequired,
+  onOpenModal: PropTypes.bool.isRequired,
+}
 
 export default Header;
