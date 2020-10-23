@@ -1,5 +1,5 @@
 .no-auth {
-  min-height: calc(100vh - 64px);
+  height: 100%;
 }
 
 .no-auth__text {

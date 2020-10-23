@@ -12,6 +12,21 @@ import { getStatusModalReg } from "../../reducers/application/selectors";
 import { ActionCreator as UserActionCreator, AuthStatus } from "../../reducers/user/reducer";
 import { ActionCreator as ApplicationActionCreator } from '../../reducers/application/reducer';
 
+const listsData = [
+  {
+    listName: `TODO`,
+  },
+  {
+    listName: `In Progress`
+  },
+  {
+    listName: `Testing`
+  },
+  {
+    listName: `Done`
+  }
+];
+
 function App(props) {
   const { userData, isModalRegOpen, onRegistration, onChangeStatusModalReg} = props;
 
@@ -21,12 +36,12 @@ function App(props) {
     <React.Fragment>
       <Header userData={userData} onOpenModal={onChangeStatusModalReg} />
 
-      <main className="page-main">
+      <main className="page-main d-flex">
         <h2 className="visually-hidden">
           List of cards from the "Name board" board
         </h2>
         <div className="container">
-          {isUserData ? <NoAuth onOpenModal={onChangeStatusModalReg} /> : <ListsBoard listsData={{}} />}
+          {isUserData ? <NoAuth onOpenModal={onChangeStatusModalReg} /> : <ListsBoard listsData={listsData} />}
         </div>
 
         {

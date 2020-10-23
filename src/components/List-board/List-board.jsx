@@ -1,10 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
+import './List-board.css';
 
 const ListBoard = (props) => {
+  const { listData } = props;
   return (
-    <div className="lists__list list col-xl-3">
+    <div className="lists__list list mr-5">
       <div className="list-header">
-        <h3 className="list-header__title">TODO</h3>
+        <h3 className="list-header__title">{listData.listName}</h3>
         <div className="list__card-list card-list">
           <div className="card-list__card card">
             <input type="text" />
@@ -18,6 +21,12 @@ const ListBoard = (props) => {
       </div>
     </div>
   );
+};
+
+ListBoard.propTypes = {
+  listData: PropTypes.shape({
+    listName: PropTypes.string.isRequired,
+  }),
 };
 
 export default ListBoard;
