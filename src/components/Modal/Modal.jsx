@@ -40,7 +40,7 @@ class Modal extends Component {
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
-  onCancel: PropTypes.bool.isRequired,
+  onCancel: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 }
 

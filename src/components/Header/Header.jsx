@@ -34,7 +34,7 @@ Header.propTypes = {
   userData: PropTypes.shape({
     firstName: PropTypes.string,
   }).isRequired,
-  onOpenModal: PropTypes.bool.isRequired,
+  onOpenModal: PropTypes.func.isRequired,
 }
 
 export default Header;
