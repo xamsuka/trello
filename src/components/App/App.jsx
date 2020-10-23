@@ -26,7 +26,7 @@ function App(props) {
           List of cards from the "Name board" board
         </h2>
         <div className="container">
-          {isUserData ? <NoAuth /> : <ListsBoard listsData={{}} />}
+          {isUserData ? <NoAuth onOpenModal={onChangeStatusModalReg} /> : <ListsBoard listsData={{}} />}
         </div>
 
         {

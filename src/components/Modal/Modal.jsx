@@ -12,10 +12,10 @@ class Modal extends Component {
       <React.Fragment>
         {isOpen && (
           <Portal>
-            <div className="modal">
+            <div className="modal row">
               <div className="modal__overlay">
-                <div className="modal__window">
-                  <div className="modal__content">
+                <div className="modal__window col-10 col-sm-6 col-xl-3">
+                  <div className="modal__content ">
                     <h2 className="modal__title">{title}</h2>
                     <div className="modal__button modal__body">{children}</div>
                     <button

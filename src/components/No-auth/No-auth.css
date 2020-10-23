@@ -1,0 +1,7 @@
+.no-auth {
+  min-height: calc(100vh - 64px);
+}
+
+.no-auth__text {
+  font-size: 24px;
+}
