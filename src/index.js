@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import { reducer } from "./reducers/reducer";
+import "./index.css";
+import App from "./components/App/App.jsx";
+// import { ActionCreator as DataActionCreator } from './reducers/data/reducer';
+import { ActionCreator as UserActionCreator, AuthStatus} from "./reducers/user/reducer";
+import { ActionCreator as ApplicationActionCreator } from './reducers/application/reducer';
+import { getUserData } from "./data";
+
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+store.dispatch(UserActionCreator.changeStatusLoadingUserData(true));
+const userData = getUserData(store.dispatch);
+store.dispatch(UserActionCreator.changeStatusLoadingUserData(false));
+store.dispatch(UserActionCreator.changeStatusLoadedUserData(true));
+if (userData) {
+  store.dispatch(UserActionCreator.authorizeUser(AuthStatus.USER_AUTH, userData));
+} else {
+  store.dispatch(ApplicationActionCreator.changeStatusOpenModalReg(true));
+}
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store = {store}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Provider>,
+  document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

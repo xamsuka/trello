@@ -1,0 +1,32 @@
+.header {
+    padding: 17px 0;
+    background-color: var(--blue-base);
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.profile {
+    cursor: pointer;
+}
+
+.profile__photo,
+.profile__name {
+    display: block;
+}
+
+.profile__name {
+    margin-left: 10px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+}
